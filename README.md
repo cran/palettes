@@ -8,6 +8,8 @@
 [![R-CMD-check](https://github.com/mccarthy-m-g/palettes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mccarthy-m-g/palettes/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/mccarthy-m-g/palettes/branch/main/graph/badge.svg)](https://app.codecov.io/gh/mccarthy-m-g/palettes?branch=main)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/palettes)](https://CRAN.R-project.org/package=palettes)
 <!-- badges: end -->
 
 palettes is an R package for working with colour vectors and colour

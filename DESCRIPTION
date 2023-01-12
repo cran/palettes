@@ -1,6 +1,6 @@
 Package: palettes
 Title: Methods for Colour Vectors and Colour Palettes
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Michael",
            family = "McCarthy",
@@ -30,8 +30,8 @@ Language: en-GB
 LazyData: true
 RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2022-12-16 22:38:35 UTC; Michael
+Packaged: 2023-01-12 22:36:58 UTC; Michael
 Author: Michael McCarthy [aut, cre, cph]
 Maintainer: Michael McCarthy <m.mccarthy1624@gmail.com>
 Repository: CRAN
-Date/Publication: 2022-12-19 09:50:02 UTC
+Date/Publication: 2023-01-12 22:50:02 UTC
