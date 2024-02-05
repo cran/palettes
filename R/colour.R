@@ -14,10 +14,10 @@ methods::setOldClass(c("palettes_colour", "vctrs_vctr"))
 #' @details
 #' Colours can be specified using either:
 #' - Hexadecimal strings of the form `"#RRGGBB"` or `"#RRGGBBAA"`
-#' - Colour names from `grDevices::colors()`
-#' - Positive integers `i` that index into `grDevices::palette()[i]`
+#' - Colour names from [grDevices::colors()]
+#' - Positive integers `i` that index into [grDevices::palette()]`[i]`
 #' @return An S3 vector of class `palettes_colour`.
-#' @seealso `pal_palette()`
+#' @seealso [pal_palette()]
 #' @export
 #' @examples
 #' pal_colour(c("darkred", "#0F7BA2"))
@@ -40,11 +40,11 @@ validate_colour <- function(x) {
   values <- vec_data(x)
   valid_colours <- is_valid_colour(values)
 
-  if (any(!valid_colours) & vec_size(values) != 0) {
-    invalid_colours <- paste(paste0("\"", values[!valid_colours], "\""), collapse = ", ")
-    rlang::abort(c(
+  if (!all(valid_colours) && vec_size(values) != 0) {
+    invalid_colours <- values[!valid_colours]
+    cli::cli_abort(c(
       "All `x` values must be hexadecimal strings or colour names.",
-      "x" = paste0("The following values are not valid colours: ", invalid_colours, ".")
+      "x" = "The following value{?s} {?is/are} not {?a/} valid colour{?s}: {.str {invalid_colours}}."
     ))
   }
 

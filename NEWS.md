@@ -1,3 +1,13 @@
+# palettes 0.2.0
+
+- Added a variety of global options to adjust the printing behaviour of colour vectors. See `help("palettes-options")` and `vignette("palettes")` for details and examples (#35).
+
+- Added a "Made with palettes" article to the pkgdown site showcasing colour palette packages made with palettes (#37).
+
+- Improved error message for invalid colours to support singular and plural grammar (@olivroy, #32).
+
+- Minor improvements to documentation throughout the package---mainly cross-linking (#38).
+
 # palettes 0.1.1
 
 This is a small patch release that fixes a typo in the "Creating a Colour Package" vignette, replacing the non-existent `pal_brewer()` function with the intended `pal_ramp()` function.

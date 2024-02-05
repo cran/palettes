@@ -153,7 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palettes)</span></code></pre></div>
 <div id="creating" class="section level2">
 <h2>Creating</h2>
-<p><code>pal_colour()</code> is a nice way to create a colour vector. Colours can be a character vector of <code>&quot;#RRGGBB&quot;</code> or <code>&quot;#RRGGBBAA&quot;</code>, colour names from <code>grDevices::colors()</code>, or a positive integer that indexes into <code>grDevices::palette()</code>. Colour vectors are always printed as hex codes with colour previews.</p>
+<p><code>pal_colour()</code> is a nice way to create a colour vector. Colours can be a character vector of hexadecimal strings of the form <code>&quot;#RRGGBB&quot;</code> or <code>&quot;#RRGGBBAA&quot;</code>, colour names from <code>grDevices::colors()</code>, or a positive integer that indexes into <code>grDevices::palette()</code>. By default, colour vectors are always printed as hex codes with colour previews.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>colour_vector <span class="ot">&lt;-</span> <span class="fu">pal_colour</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;#a00e00&quot;</span>, <span class="st">&quot;#d04e00&quot;</span>, <span class="st">&quot;#f6c200&quot;</span>, <span class="st">&quot;#0086a8&quot;</span>, <span class="st">&quot;#132b69&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -228,7 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7 java    • #EA7428</span></span>
 <span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8 java    • #E2998A</span></span>
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9 java    • #0C7156</span></span></code></pre></div>
-<!-- add coercion examples -->
+<!-- TODO: add coercion examples -->
 </div>
 <div id="subsetting" class="section level2">
 <h2>Subsetting</h2>
@@ -283,6 +283,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(colour_palette)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;egypt&quot; &quot;java&quot;</span></span></code></pre></div></li>
 </ul>
+<!--
+## Mixing
+
+Colour vectors can be mixed to create new colours.
+
+  - To mix colours in an additive space use `+`:
+
+    
+    ```r
+    pal_colour("red") + pal_colour("blue")
+    #> <palettes_colour[1]>
+    #> • #FF00FF
+    ```
+    
+  - Subtractive mixing with `-` will be supported in a future version.
+-->
 </div>
 <div id="plotting" class="section level2">
 <h2>Plotting</h2>
@@ -303,16 +319,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="data:image/png;base64,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AQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrgfOPn37q+PX1zdk/L1/V7JDfnz++OOTdevTyyU1NDvv904vXh739pYc/vMmv4pc+Pv3d+7fT8ycfv3538kenH7y8ujp78OhhvnGrAOUVAwIECJwg4J9gJ6D5CAECdyMgQHfj6AoBAicICNAJaD5CgMDdCAjQ3Ti6QoDACQICdAKajxAgcDcCAnQ3jq4QIHCCgACdgOYjBAjcjYAA3Y2jKwQInCDwHyK1PUMD3asxAAAAAElFTkSuQmCC" /><!-- --></p>
 <p>All plots are ggplot2 objects and can be customized using any of the standard ggplot2 methods. See the ggplot2 <a href="https://ggplot2.tidyverse.org/articles/faq-customising.html">customizing FAQ</a> for some common examples.</p>
 </div>
-<div id="mixing" class="section level2">
-<h2>Mixing</h2>
-<p>Colour vectors can be mixed to create new colours.</p>
+<div id="printing" class="section level2">
+<h2>Printing</h2>
+<p>The printing behaviour of colour vectors can be adjusted using a variety of global options. See <code>help(&quot;palettes-options&quot;)</code> for a list of all the available options and their default values.</p>
+<p>For example, to change the symbol used for colour previews, set the <code>palettes.print_symbol</code> option.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">palettes.print_symbol =</span> <span class="st">&quot;square&quot;</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>colour_vector</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ■ #A00E00</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ■ #D04E00</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ■ #F6C200</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ■ #0086A8</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ■ #132B69</span></span></code></pre></div>
+<p>Set multiple options together for unique printing styles.</p>
 <ul>
-<li><p>To mix colours in an additive space use <code>+</code>:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pal_colour</span>(<span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="fu">pal_colour</span>(<span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[1]&gt;</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #FF00FF</span></span></code></pre></div></li>
-<li><p>Subtractive mixing with <code>-</code> will be supported in a future version.</p></li>
+<li><p>Print colour vectors compactly:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_symbol =</span> <span class="st">&quot;circle_large&quot;</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_hex =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_width =</span> <span class="dv">5</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>colour_palette</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_palette[2]&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $egypt</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ⬤⬤⬤⬤</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $java</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ⬤⬤⬤⬤⬤</span></span></code></pre></div></li>
+<li><p>Mimic the appearance of a character vector:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_symbol =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_sep =</span> <span class="st">&quot;, &quot;</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_width =</span> <span class="dv">5</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_index =</span> <span class="cn">TRUE</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>colour_vector</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] #A00E00, #D04E00, #F6C200, #0086A8, #132B69</span></span></code></pre></div></li>
 </ul>
+<p>Set any of these options in your <a href="https://rstats.wtf/r-startup.html#rprofile"><code>.Rprofile</code></a> dotfile to have them persist across R sessions on a global or per-project basis.</p>
 </div>
 
 

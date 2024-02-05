@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 # Preview vignette with: devtools::build_rmd("vignettes/gt.Rmd")
 knitr::opts_chunk$set(
   collapse = TRUE,

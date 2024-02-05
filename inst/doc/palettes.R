@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 # Preview vignette with: devtools::build_rmd("vignettes/palettes.Rmd")
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -57,6 +57,9 @@ colour_palette$egypt
 names(colour_palette)
 
 ## -----------------------------------------------------------------------------
+pal_colour("red") + pal_colour("blue")
+
+## -----------------------------------------------------------------------------
 plot(colour_vector)
 
 ## -----------------------------------------------------------------------------
@@ -68,6 +71,36 @@ plot(colour_palette)
 ## -----------------------------------------------------------------------------
 plot(colour_vector, n = 7, direction = -1, interpolate = "linear")
 
+## ----include=FALSE------------------------------------------------------------
+op <- options()
+
 ## -----------------------------------------------------------------------------
-pal_colour("red") + pal_colour("blue")
+options(palettes.print_symbol = "square")
+colour_vector
+
+## ----include=FALSE------------------------------------------------------------
+options(op)
+
+## -----------------------------------------------------------------------------
+options(
+  palettes.print_symbol = "circle_large",
+  palettes.print_hex = FALSE,
+  palettes.print_width = 5
+)
+colour_palette
+
+## ----include=FALSE------------------------------------------------------------
+options(op)
+
+## -----------------------------------------------------------------------------
+options(
+  palettes.print_symbol = FALSE,
+  palettes.print_sep = ", ",
+  palettes.print_width = 5,
+  palettes.print_index = TRUE
+)
+colour_vector
+
+## ----include=FALSE------------------------------------------------------------
+options(op)
 

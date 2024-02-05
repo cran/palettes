@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 # Preview vignette with: devtools::build_rmd("vignettes/ggplot2.Rmd")
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -15,7 +15,7 @@ ggplot(diamonds[sample(nrow(diamonds), 1000), ], aes(carat, price)) +
   geom_point(aes(colour = clarity)) +
   scale_colour_palette_d(met_palettes$VanGogh3)
 
-## ---- out.width = "45%", fig.show = "hold"------------------------------------
+## ----out.width = "45%", fig.show = "hold"-------------------------------------
 hwy_mpg <- ggplot(mpg, aes(displ, hwy, colour = hwy)) +
   geom_point()
 
@@ -28,7 +28,7 @@ ggplot(diamonds, aes(x = price, fill = cut)) +
   geom_histogram(position = "dodge", binwidth = 1000) +
   scale_fill_palette_d(pnw_palettes$Sunset)
 
-## ---- out.width = "45%", fig.show = "hold"------------------------------------
+## ----out.width = "45%", fig.show = "hold"-------------------------------------
 eruptions <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_tile()
 
