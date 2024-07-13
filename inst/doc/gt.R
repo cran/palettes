@@ -55,13 +55,13 @@ character_vector
 gt_tbl %>% 
   data_color(
     columns = Temp,
-    colors  = character_vector
+    palette = character_vector
   )
 
 ## -----------------------------------------------------------------------------
 gt_tbl %>% 
   data_color(
     columns = Temp,
-    colors  = pal_numeric(colour_vector, domain = NULL)
+    fn = pal_numeric(colour_vector, domain = NULL)
   )
 
