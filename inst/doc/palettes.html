@@ -14,30 +14,42 @@
 
 <title>palettes</title>
 
-<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
 
 <style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,58 +60,57 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {   }
+{ }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -133,7 +144,187 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 
 
@@ -149,85 +340,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<p>The goal of palettes is to provide methods for working with colour palettes for users and developers.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palettes)</span></code></pre></div>
+<p>The goal of palettes is to provide methods for working with colour
+palettes for users and developers.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(palettes)</span></code></pre></div>
 <div id="creating" class="section level2">
 <h2>Creating</h2>
-<p><code>pal_colour()</code> is a nice way to create a colour vector. Colours can be a character vector of hexadecimal strings of the form <code>&quot;#RRGGBB&quot;</code> or <code>&quot;#RRGGBBAA&quot;</code>, colour names from <code>grDevices::colors()</code>, or a positive integer that indexes into <code>grDevices::palette()</code>. By default, colour vectors are always printed as hex codes with colour previews.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>colour_vector <span class="ot">&lt;-</span> <span class="fu">pal_colour</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;#a00e00&quot;</span>, <span class="st">&quot;#d04e00&quot;</span>, <span class="st">&quot;#f6c200&quot;</span>, <span class="st">&quot;#0086a8&quot;</span>, <span class="st">&quot;#132b69&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>colour_vector</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #A00E00</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #D04E00</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #F6C200</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #0086A8</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #132B69</span></span></code></pre></div>
-<p><code>pal_palette()</code> is a nice way to create named colour palettes.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>colour_palette <span class="ot">&lt;-</span> <span class="fu">pal_palette</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">egypt =</span> <span class="fu">c</span>(<span class="st">&quot;#dd5129&quot;</span>, <span class="st">&quot;#0f7ba2&quot;</span>, <span class="st">&quot;#43b284&quot;</span>, <span class="st">&quot;#fab255&quot;</span>),</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">java  =</span> <span class="fu">c</span>(<span class="st">&quot;#663171&quot;</span>, <span class="st">&quot;#cf3a36&quot;</span>, <span class="st">&quot;#ea7428&quot;</span>, <span class="st">&quot;#e2998a&quot;</span>, <span class="st">&quot;#0c7156&quot;</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>colour_palette</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_palette[2]&gt;</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $egypt</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #DD5129</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #0F7BA2</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #43B284</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #FAB255</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $java</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #663171</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #CF3A36</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #EA7428</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #E2998A</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #0C7156</span></span></code></pre></div>
+<p><code>pal_colour()</code> is a nice way to create a colour vector.
+Colours can be a character vector of hexadecimal strings of the form
+<code>&quot;#RRGGBB&quot;</code> or <code>&quot;#RRGGBBAA&quot;</code>, colour names from
+<code>grDevices::colors()</code>, or a positive integer that indexes
+into <code>grDevices::palette()</code>. By default, colour vectors are
+always printed as hex codes with colour previews.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>colour_vector <span class="ot">&lt;-</span> <span class="fu">pal_colour</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;#a00e00&quot;</span>, <span class="st">&quot;#d04e00&quot;</span>, <span class="st">&quot;#f6c200&quot;</span>, <span class="st">&quot;#0086a8&quot;</span>, <span class="st">&quot;#132b69&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>colour_vector</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt; • #A00E00</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; • #D04E00</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; • #F6C200</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; • #0086A8</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; • #132B69</span></span></code></pre></div>
+<p><code>pal_palette()</code> is a nice way to create named colour
+palettes.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>colour_palette <span class="ot">&lt;-</span> <span class="fu">pal_palette</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="at">egypt =</span> <span class="fu">c</span>(<span class="st">&quot;#dd5129&quot;</span>, <span class="st">&quot;#0f7ba2&quot;</span>, <span class="st">&quot;#43b284&quot;</span>, <span class="st">&quot;#fab255&quot;</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="at">java  =</span> <span class="fu">c</span>(<span class="st">&quot;#663171&quot;</span>, <span class="st">&quot;#cf3a36&quot;</span>, <span class="st">&quot;#ea7428&quot;</span>, <span class="st">&quot;#e2998a&quot;</span>, <span class="st">&quot;#0c7156&quot;</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>)</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>colour_palette</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_palette[2]&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; $egypt</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; • #DD5129</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; • #0F7BA2</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; • #43B284</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; • #FAB255</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; $java</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; • #663171</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; • #CF3A36</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt; • #EA7428</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; • #E2998A</span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="co">#&gt; • #0C7156</span></span></code></pre></div>
 </div>
 <div id="casting-and-coercion" class="section level2">
 <h2>Casting and coercion</h2>
-<p>To compliment <code>pal_colour()</code>, palettes provides <code>as_colour()</code> to cast objects into colour vectors.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>colour_strings <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;purple&quot;</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as_colour</span>(colour_strings)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[2]&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #FFA500</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #A020F0</span></span></code></pre></div>
-<p>To compliment <code>pal_palette()</code>, palettes provides <code>as_palette()</code> to cast objects into colour palettes.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>colour_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">OrPu =</span> <span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;purple&quot;</span>))</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as_palette</span>(colour_list)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_palette[1]&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $OrPu</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[2]&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #FFA500</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #A020F0</span></span></code></pre></div>
-<p>Colour vectors and colour palettes can also be coerced into a tibble with <code>as_tibble()</code>. See <code>vignette(&quot;tibble&quot;, package = &quot;tibble&quot;)</code> for an overview of tibbles.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(colour_vector)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 1</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   colour   </span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;colour&gt; </span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 • #A00E00</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 • #D04E00</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 • #F6C200</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 • #0086A8</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 • #132B69</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(colour_palette)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 9 × 2</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   palette colour   </span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;colour&gt; </span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 egypt   • #DD5129</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 egypt   • #0F7BA2</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 egypt   • #43B284</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 egypt   • #FAB255</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 java    • #663171</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 java    • #CF3A36</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7 java    • #EA7428</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8 java    • #E2998A</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9 java    • #0C7156</span></span></code></pre></div>
+<p>To compliment <code>pal_colour()</code>, palettes provides
+<code>as_colour()</code> to cast objects into colour vectors.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>colour_strings <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;purple&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">as_colour</span>(colour_strings)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[2]&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; • #FFA500</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; • #A020F0</span></span></code></pre></div>
+<p>To compliment <code>pal_palette()</code>, palettes provides
+<code>as_palette()</code> to cast objects into colour palettes.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>colour_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">OrPu =</span> <span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;purple&quot;</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">as_palette</span>(colour_list)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_palette[1]&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt; $OrPu</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[2]&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; • #FFA500</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; • #A020F0</span></span></code></pre></div>
+<p>Colour vectors and colour palettes can also be coerced into a tibble
+with <code>as_tibble()</code>. See
+<code>vignette(&quot;tibble&quot;, package = &quot;tibble&quot;)</code> for an overview of
+tibbles.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">as_tibble</span>(colour_vector)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 1</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#&gt;   colour   </span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt;   &lt;colour&gt; </span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt; 1 • #A00E00</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; 2 • #D04E00</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt; 3 • #F6C200</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt; 4 • #0086A8</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt; 5 • #132B69</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="fu">as_tibble</span>(colour_palette)</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt; # A tibble: 9 × 2</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt;   palette colour   </span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;colour&gt; </span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt; 1 egypt   • #DD5129</span></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; 2 egypt   • #0F7BA2</span></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co">#&gt; 3 egypt   • #43B284</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="co">#&gt; 4 egypt   • #FAB255</span></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a><span class="co">#&gt; 5 java    • #663171</span></span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a><span class="co">#&gt; 6 java    • #CF3A36</span></span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a><span class="co">#&gt; 7 java    • #EA7428</span></span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a><span class="co">#&gt; 8 java    • #E2998A</span></span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a><span class="co">#&gt; 9 java    • #0C7156</span></span></code></pre></div>
 <!-- TODO: add coercion examples -->
 </div>
 <div id="subsetting" class="section level2">
@@ -235,53 +438,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Colour vectors can be subset using <code>[</code>.</p>
 <ul>
 <li><p>To extract one or more colours use positive integers:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>colour_vector[<span class="dv">3</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[1]&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #F6C200</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>colour_vector[<span class="dv">3</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[1]&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt; • #F6C200</span></span></code></pre></div></li>
 <li><p>To drop one or more colours use negative integers:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>colour_vector[<span class="sc">-</span><span class="dv">3</span>]</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #A00E00</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #D04E00</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #0086A8</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #132B69</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>colour_vector[<span class="sc">-</span><span class="dv">3</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt; • #A00E00</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt; • #D04E00</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt; • #0086A8</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; • #132B69</span></span></code></pre></div></li>
 <li><p>To move one or more colours extract, drop, and combine:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(colour_vector[<span class="sc">-</span><span class="dv">3</span>], colour_vector[<span class="dv">3</span>])</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #A00E00</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #D04E00</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #0086A8</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #132B69</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #F6C200</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">c</span>(colour_vector[<span class="sc">-</span><span class="dv">3</span>], colour_vector[<span class="dv">3</span>])</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">#&gt; • #A00E00</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co">#&gt; • #D04E00</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">#&gt; • #0086A8</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co">#&gt; • #132B69</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co">#&gt; • #F6C200</span></span></code></pre></div></li>
 </ul>
-<p>Colour palettes can be subset using <code>[</code>, <code>[[</code>, and <code>$</code>.</p>
+<p>Colour palettes can be subset using <code>[</code>, <code>[[</code>,
+and <code>$</code>.</p>
 <ul>
 <li><p>To extract one or more colour palettes use <code>[</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>colour_palette[<span class="st">&quot;egypt&quot;</span>]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_palette[1]&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $egypt</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #DD5129</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #0F7BA2</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #43B284</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #FAB255</span></span></code></pre></div></li>
-<li><p>To extract a single colour palette as a colour vector use <code>[[</code> or <code>$</code>:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>colour_palette[[<span class="st">&quot;egypt&quot;</span>]]</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #DD5129</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #0F7BA2</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #43B284</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #FAB255</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>colour_palette<span class="sc">$</span>egypt</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #DD5129</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #0F7BA2</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #43B284</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • #FAB255</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>colour_palette[<span class="st">&quot;egypt&quot;</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_palette[1]&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt; $egypt</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt; • #DD5129</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt; • #0F7BA2</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; • #43B284</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt; • #FAB255</span></span></code></pre></div></li>
+<li><p>To extract a single colour palette as a colour vector use
+<code>[[</code> or <code>$</code>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>colour_palette[[<span class="st">&quot;egypt&quot;</span>]]</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co">#&gt; • #DD5129</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co">#&gt; • #0F7BA2</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co">#&gt; • #43B284</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="co">#&gt; • #FAB255</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>colour_palette<span class="sc">$</span>egypt</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="co">#&gt; • #DD5129</span></span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a><span class="co">#&gt; • #0F7BA2</span></span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a><span class="co">#&gt; • #43B284</span></span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="co">#&gt; • #FAB255</span></span></code></pre></div></li>
 <li><p>To get names of colour palettes use <code>names()</code>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(colour_palette)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;egypt&quot; &quot;java&quot;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">names</span>(colour_palette)</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;egypt&quot; &quot;java&quot;</span></span></code></pre></div></li>
 </ul>
 <!--
 ## Mixing
@@ -291,7 +496,7 @@ Colour vectors can be mixed to create new colours.
   - To mix colours in an additive space use `+`:
 
     
-    ```r
+    ``` r
     pal_colour("red") + pal_colour("blue")
     #> <palettes_colour[1]>
     #> • #FF00FF
@@ -302,64 +507,76 @@ Colour vectors can be mixed to create new colours.
 </div>
 <div id="plotting" class="section level2">
 <h2>Plotting</h2>
-<p><code>plot()</code> is a nice way to showcase colour vectors and colour palettes. The appearance of the plot depends on the input.</p>
+<p><code>plot()</code> is a nice way to showcase colour vectors and
+colour palettes. The appearance of the plot depends on the input.</p>
 <ul>
 <li><p>Colour vectors are plotted as swatches:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(colour_vector)</span></code></pre></div>
-<p><img src="data:image/png;base64,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gZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCQjQStZdAgRSQICSyIAAgZWAAK1k3SVAIAUEKIkMCBBYCdx++vyq4x/ff7h5e39fs6v7+ZOnV/fIhx74y2e3h3bXNnrz8PzaHvnY8757OLa7otWrly9u7u4e5xMfClBeMSBAgMAJAv4EOwHNWwgQOI+AAJ3H0RUCBE4QEKAT0LyFAIHzCAjQeRxdIUDgBAEBOgHNWwgQOI+AAJ3H0RUCBE4QEKAT0LyFAIHzCAjQeRxdIUDgBIF/AWP8MC8Z4O0lAAAAAElFTkSuQmCC" /><!-- --></p></li>
-<li><p>Single colour palettes are plotted as swatches with a palette name overlay:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(colour_palette[<span class="st">&quot;egypt&quot;</span>])</span></code></pre></div>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAYAAAAUg66AAAAEGWlDQ1BrQ0dDb2xvclNwYWNlR2VuZXJpY1JHQgAAOI2NVV1oHFUUPrtzZyMkzlNsNIV0qD8NJQ2TVjShtLp/3d02bpZJNtoi6GT27s6Yyc44M7v9oU9FUHwx6psUxL+3gCAo9Q/bPrQvlQol2tQgKD60+INQ6Ium65k7M5lpurHeZe58853vnnvuuWfvBei5qliWkRQBFpquLRcy4nOHj4g9K5CEh6AXBqFXUR0rXalMAjZPC3e1W99Dwntf2dXd/p+tt0YdFSBxH2Kz5qgLiI8B8KdVy3YBevqRHz/qWh72Yui3MUDEL3q44WPXw3M+fo1pZuQs4tOIBVVTaoiXEI/MxfhGDPsxsNZfoE1q66ro5aJim3XdoLFw72H+n23BaIXzbcOnz5mfPoTvYVz7KzUl5+FRxEuqkp9G/Ajia219thzg25abkRE/BpDc3pqvphHvRFys2weqvp+krbWKIX7nhDbzLOItiM8358pTwdirqpPFnMF2xLc1WvLyOwTAibpbmvHHcvttU57y5+XqNZrLe3lE/Pq8eUj2fXKfOe3pfOjzhJYtB/yll5SDFcSDiH+hRkH25+L+sdxKEAMZahrlSX8ukqMOWy/jXW2m6M9LDBc31B9LFuv6gVKg/0Szi3KAr1kGq1GMjU/aLbnq6/lRxc4XfJ98hTargX++DbMJBSiYMIe9Ck1YAxFkKEAG3xbYaKmDDgYyFK0UGYpfoWYXG+fAPPI6tJnNwb7ClP7IyF+D+bjOtCpkhz6CFrIa/I6sFtNl8auFXGMTP34sNwI/JhkgEtmDz14ySfaRcTIBInmKPE32kxyyE2Tv+thKbEVePDfW/byMM1Kmm0XdObS7oGD/MypMXFPXrCwOtoYjyyn7BV29/MZfsVzpLDdRtuIZnbpXzvlf+ev8MvYr/Gqk4H/kV/G3csdazLuyTMPsbFhzd1UabQbjFvDRmcWJxR3zcfHkVw9GfpbJmeev9F08WW8uDkaslwX6avlWGU6NRKz0g/SHtCy9J30o/ca9zX3Kfc19zn3BXQKRO8ud477hLnAfc1/G9mrzGlrfexZ5GLdn6ZZrrEohI2wVHhZywjbhUWEy8icMCGNCUdiBlq3r+xafL549HQ5jH+an+1y+LlYBifuxAvRN/lVVVOlwlCkdVm9NOL5BE4wkQ2SMlDZU97hX86EilU/lUmkQUztTE6mx1EEPh7OmdqBtAvv8HdWpbrJS6tJj3n0CWdM6busNzRV3S9KTYhqvNiqWmuroiKgYhshMjmhTh9ptWhsF7970j/SbMrsPE1suR5z7DMC+P/Hs+y7ijrQAlhyAgccjbhjPygfeBTjzhNqy28EdkUh8C+DU9+z2v/oyeH791OncxHOs5y2AtTc7nb/f73TWPkD/qwBnjX8BoJ98VQNcC+8AABmpSURBVHgB7d0HfFRl1sfxE6VDwAYKSO9dFMQXdFHEhr4gqKiICoioFCEqRZEXcEVdXRfbgooCKyC9BEFEFFAQu4iVqnSQrvQm730uOzczySTPw5CTDOZ3P5+YW86cufMd8vfObZNwzBuEAQEEEMgGgdOy4Tl5SgQQQMAXIID4h4AAAtkmQABlGz1PjAACBBD/BhBAINsECKBso+eJEUCAAOLfAAIIZJsAAZRt9DwxAggQQPwbQACBbBPI5fLMx44clkMb17mU5oiatXnPzBGv0+VF5ilw2KUsR9SUPnYwR7xOlxeZUKi4yGn2eLFXeM9mwmd5mytdnjdH1FxRMylHvE6XF1m58WqXshxRM/fo9znidbq8yLzNh0tC4VLWUj6CWYkoQAABLQECSEuWvgggYBUggKxEFCCAgJYAAaQlS18EELAKEEBWIgoQQEBLgADSkqUvAghYBQggKxEFCCCgJUAAacnSFwEErAIEkJWIAgQQ0BIggLRk6YsAAlYBAshKRAECCGgJEEBasvRFAAGrAAFkJaIAAQS0BAggLVn6IoCAVYAAshJRgAACWgIEkJYsfRFAwCpAAFmJKEAAAS0BAkhLlr4IIGAVIICsRBQggICWAAGkJUtfBBCwChBAViIKEEBAS4AA0pKlLwIIWAUIICsRBQggoCVAAGnJ0hcBBKwCBJCViAIEENASIIC0ZOmLAAJWAQLISkQBAghoCRBAWrL0RQABqwABZCWiAAEEtAQIIC1Z+iKAgFWAALISUYAAAloCBJCWLH0RQMAqQABZiShAAAEtAQJIS5a+CCBgFSCArEQUIICAlgABpCVLXwQQsAoQQFYiChBAQEuAANKSpS8CCFgFCCArEQUIIKAlQABpydIXAQSsAgSQlYgCBBDQEiCAtGTpiwACVgECyEpEAQIIaAkQQFqy9EUAAasAAWQlogABBLQECCAtWfoigIBVgACyElGAAAJaAgSQlix9EUDAKkAAWYkoQAABLQECSEuWvgggYBUggKxEFCCAgJYAAaQlS18EELAKEEBWIgoQQEBLgADSkqUvAghYBQggKxEFCCCgJUAAacnSFwEErAIEkJWIAgQQ0BIggLRk6YsAAlYBAshKRAECCGgJEEBasvRFAAGrAAFkJaIAAQS0BAggLVn6IoCAVYAAshJRgAACWgIEkJYsfRFAwCpAAFmJKEAAAS0BAkhLlr4IIGAVIICsRBQggICWAAGkJUtfBBCwChBAViIKEEBAS4AA0pKlLwIIWAUIICsRBQggoCVAAGnJ0hcBBKwCBJCViAIEENASIIC0ZOmLAAJWAQLISkQBAghoCRBAWrL0RQABqwABZCWiAAEEtAQIIC1Z+iKAgFWAALISUYAAAloCBJCWLH0RQMAqQABZiShAAAEtAQJIS5a+CCBgFSCArEQUIICAlgABpCVLXwQQsAoQQFYiChBAQEuAANKSpS8CCFgFCCArEQUIIKAlQABpydIXAQSsAgSQlYgCBBDQEiCAtGTpiwACVgECyEpEAQIIaAkQQFqy9EUAAasAAWQlogABBLQECCAtWfoigIBVgACyElGAAAJaAgSQlix9EUDAKkAAWYkoQAABLQECSEuWvgggYBUggKxEFCCAgJYAAaQlS18EELAKEEBWIgoQQEBLgADSkqUvAghYBQggKxEFCCCgJUAAacnSFwEErAIEkJWIAgQQ0BIggLRk6YsAAlaBhGPeYKs6uPYX+XPfXltZjlm+LP+5Oea12l5ovsSDtpIcs7zysf055rXaXmhC7vySULiUrUzYArISUYAAAloCBJCWLH0RQMAqQABZiShAAAEtAQJIS5a+CCBgFSCArEQUIICAlgABpCVLXwQQsAoQQFYiChBAQEuAANKSpS8CCFgFCCArEQUIIKAlQABpydIXAQSsAgSQlYgCBBDQEiCAtGTpiwACVgECyEpEAQIIaAkQQFqy9EUAAasAAWQlogABBLQECCAtWfoigIBVgACyElFwKgocOnRIzA9DfAsQQPH9/rB2MQo80bOv/LB4SYyP5mFZJUAAZZU0z5NlAsnjJ8vk0eOz7Pl4otgFCKDY7XhkHAos/3mZDHzksThcM1YpmgABFE2FeaekwNbftki3OzvK/n3cHP5UeQNznSormtPX88iRI7Jq2VLZtWuHVKpaXc46+5yYSPbu2SMrl/0sa35ZJSXOLyXVa18gBQoWjKlXZj5oxdJlkphYWM4rWTxo+/P3P8oKb4vm4MGDUqfehVKxSiU57bTo/89cv2atdGh1h6xbvSZ4/JEjR8W4hYZcufjnHrKIl9+8I/HyTqSzHtMnjpMp40bL0h++9/4QDwRVxc4rLl0e7iPNb7ktmJfRyOaNG6T/I93li0ULpFxF84d8uqxavlQSEhKkQuWqUqPOBVK9lvdTu44UL1HS/8M1y8zzLJz3oTzRO0l2//FHmqeoWK2SNLz8b5L0eK+IZV8u+lz+/exg+e7rxRL65qcKlSvJpLkzg7q1v66WWVPfkZlTpvtB88LwoV4AXS+fzPtYXnzqOfn+m8idyGeefZY8++qLcmmTxkEPM7Jy6XLpcNMdsnXzbxHz727eOmJ62sezpUqNahHzmMheAb4XLAb/rPhesMOHD8uzA/rKrOTJ0u6+rlKv4aWSJ08e+e6br2TYy4Nlx7at/ppf3PAyef61EVIoMTHdV/Lxh+9L3x6d/S2JN8ZNldoX1vNr169dLV3btfG3hqI9uFrN2vL2jDn+ogMH9ktSx7vls4UfBaWtbr9TBr0yKJiONtKjwwMyO3mm3HjbzTLo5X/6WzAzJifLmy8N9UL1p4iHDB4+RDZt2CjP/d8gP7ROP/10OXr0aESNCcWeA/tK+y6dgvnLf1rqBd23snnjRi/0Xgjmd+7ZXYqXLBlMN73hWjnjzDOC6cwe4XvBUkRdvxeMAEoxcx7TDiATPp1ubyVLf/xBho4aLxfUuzhi3VatWCYdW98ou3bu8Oe3aH27DAj7wwsv3rZli7Rs2kj2eFsvnR/uLfd2eyh8sb9ldWfL6+SI95xmMIF2WZOm/vhZ5xSVZjfe5I+b/6xbs1paNmkYhIJ53meG/iNYHm2k8x33yIIP5smHSz71tqaOf6Hjlk2bZdvWbTLxrbEybsSo4GGVqlaW/fsPSFK/XtK4aRPJnSe3/PDtdzLKC9j3kmcEdWZk3Oxk72NZ3Yh5JtBaNr42mDdl/iypVqtGMK09QgClCLsGUPQP1Cl9GMsGgQlvDZdvv/pCOnTuliZ8zOpUqFRFbmnbLliz5AljZcHcD4Lp8JFnva0FEz5mqFuvQfgif7xqzVpy9fUtgvk7tm+Tth3v93/Cw8cUlCpTVpq1vDmonf1Osvy+a1cwnXrkgBcmny9cJJdfc2UQPqamWPHzvI96NaXH4z0jHnLY218zYc507zmaS8HEQpInb165sEF9MVtGSf16R9Q+P/CpiOloE2ZriSG+BQigOHt//vh9l7z+0r/8tQoPhtSr2bDxFRGz3p02KWLaTJgdsB99MDuYX6ZCxWA8fOTKa5sFk2YH9e7ffw+mU4/cfV+XYNaB/fu8LZjRwXTqkbnvvS/79uyVVm0i98WE6oqcEflxqPXdbcTs54k2dOrRxQ+j0DKzj+mLTz4LTfL7FBUggOLsjRv56itiQqhosXNl44Z18umC+VF/tv62OWLNVy1fFjFtJsxRs0PeEaTQEPqYFZoO/b640d9Co/7v1b+sjJgOnzBbX5c1uSqYNWbYyHQveXhnwlQ5u+g5clnTyLAMHuyNhG+lmKNgGQ09Uu3o/mnJ9xmVR/TOsJCF2SbAUbBso4/+xN98/qm/YOuW3+TB9ndEL/rv3PDDyhvWrfH3zZgdt6Hh8JHj+3VC0xvWrfV2yp4fmgx+mx3YiYWLeEe5jm/55M6dJ1gWbaT9A928j3xz/EXm3JuZk6ZJy1RbOTu375CFcz+Stp3aS/h6RuvnOq9+wwb+zvY9u3f7Dwk/5B6tR3i4RVvOvOwXIICy/z2IWINfVq7wp83O4NfeTvuxKqLYMlG6bLmIisVffib1LmkYMS80kS9fPj+A8ubNJxWrZnyoum79Bv6RNHNEzgwjhgxLE0DveofXzUfAVndE//gVet4T/V2iVEkxR73MsPbXNRk/nH1AGfvEwVI+gsXBmxBahe1btwRbIb+uOh5EoWWx/C5c5Ay5/OrrgodOHDUy4sS80IL9+/aK2eIyQ/NbbnXaYml3f9fQw/1zeMzWTvjwzsQpUrNube+kySrhs096vGTpUkGP8JMMg5lhI+RPGEacjhJAcfTG7NyxPVgbs49n3969wXSsI50f6hWc6WxCZui/0h42n/Pu8UPcZcpXkKS+A5ye6vKrrpWyYTu1R/z79eBx5gTDJV8tlpa3Z+7Wj3mCPHlTPh6Wq1g+eM5oIwmSEG028+JIgACKozejZKnSEWuTGVtB5rKNF98c7e/UNs2HD3lJBj810D/50JxHNHX8GHnOO1R/yaWNZchb4yV//gIR65DehNm/clenzsHiRfMXyLIff/anp3s7n3N7J01ef1PzYHlmjWz2TlQMDeUrRT+qF1rOPqCQRPz+JoDi6L3JX6BgEBRmtZInvO28dubkxU/mz41ab/b7JM//1N9iMUfX3p+RLG3+9yq5v+0t8uWihfLo35+RoaMn+NeGRW2QzswbWt4iRc8tFiwd6e0LMsOMSVOlabNrJPVh9qDwJEY2b9wUPLqCd21YRgMBlJFOfCxjJ3R8vA/BWpT3DnOH9sdMGTvaOyHwAUm9MzkoDhsxH63yejuSG13eJGzu8dHD3p0B+/fsIeZj04O9H8+0w9NmK+eu+++R5wc+7T/RTO8SiybXXe1tXa2Wvs88kWY9TnaGOelx6+Ytfpsy5ctK/UaXZNgydA1ahkUszFYBtoCylT/tk7e+s10w01wH9dzAx8UESEbDnJnTZeKY/0ibdvemKTM7ant27ijexVXSvU+/TAuf0BPd1q6tf9aymTZbYY92fcg70/lc7wLVy0IlmfZ7/Mgx8ueff/r9uvZ+KM3O8tSH+7d7l3swxLcAARRn788V1zSTytVTrl9aOO8D6dC6hXeR5vo0a2rC5e0Rw6RPt/ukhxcuiUWKpKl545XB/tnQVWrUSrMsM2YUKpwoJoRCw97de+TGW2+W8PORQstsvzM6r8eE2+hhI/0WlapVkWat0u5fKlwk8kTGjes3RDwl94iO4IiLCS5GjeFt0L4Y1VzX1f2etsFtLMwqFixUSC5q0FBq1b3Iu6L7TO++N7/KvPdn+ReItml/r/Ts/2SaV2IC6uoGdWSnd32XGczHu3LekauzixbzP66ZkMiXP78UKpTozyvlnTdUuVoNyZ07d5pe6c3Il3hQzMWlTes28reATN27n8/3bvlRPr2HRMyvfk6Z4HWa9RkxbZyYEw7DBxMcj9zbVebMeM+/mn3YxFHeIf464SX+uNk6uqRC7eC2IeZC1LHvTfVfq7m3UP+H+sjoGZP8a8zSPDgTZnAxagqi68WoBFCKmfOYdgCZFZn73kzvFhpdxNwGI6Ph1rs6+OGT3hZH57tulU8/np9Ri4hl5gp4s1O66XU3RMxPb8IEkBke7fqwTBs7US6of5H/R59efer54QF0Xoni/nlKHbwtukZXNJbzvXN+vv7sCzE7t81RtuIlS8gbk0ZL+coVU7cJpgc92l9Gvz4imC5QsIB/8asJyZHTxkutC9MGV1B8kiMEUAqgawDxESzFLK7Gmlx7vQwbP9W7C2D0s5LNTcWGT5wufZ54OsOPO/3/MViua9HK+bWZ+wz1fOAeebpfH+fHmMLa//3DPpkzn7v0SpLHnh4gb7w4VFpcepVcVLqqdGp9l5itl2taXO8F27QMw8esR88Bj0VctLpv7z7vMpNEGT1zsmr4mOdmOHEBtoBO3EyyYgsofLXMtU8/frdYVq9a6W0VlJVK1apLsXPPCy9Jd9x8LDE7snN5H6ta3dbW67FCNnl3RzQXvO7ft08OHjjg/5gtrd937ZTV3q1aN61fJ+aSjPlLlkq+fPnT7W0WhLaA+nXvJTMmT5MFP30tZr+Q6xC+BfT3F56Vm++8Tcx+pGU//ezt99okVapXFXO4/UQPqZv9SeZOibUvqutfEOu6PidTxxZQip7rFlCulIcwFq8C5mLRBt4V6+bnRAaz4/bxpC6yzTsDeph3J0RzP2Wz5WQbPpg1Q3p5R87MOULhV76n9zizlTF7+rveZRytTih80utn7gVk7gN0MkOpsmXE/DDEtwABFN/vT8xr5x9+9z5KmfsBjZo2K92buUd7ArP/p0aduhK66jxaTfi86RMm+zt+297XPnw24whYBdgHZCU6NQuGD3nRDx9zbky1Wie249V8LPt15XLvJvX2x+35Y7cM+edLcsnfGmX6haenpjxrfSICBNCJaJ1CtbOSp/hra7aEflyy2HnNzUmPg7wbfzVs3ETMxanhg7la39yCw3y0M4M50/i5AU/530bR8cEHwksZR8BJgI9gTkynXpG5c6HZaW2G3l07SW/vHsqNvFAxl09EG8xWj/n2jP+8PsRf/NqYSRFlU8aOkicf6+mHjtkxbW6Uv3v3H364XeV920SjK05s/5Rpbi6tCL9cwnxnGUPOEiCA/qLvd7defeUHb8vnt00bva+r2SBJ997t7wcyX0ZYulx5KVOugh9GZqvGfHOGOcp2YP9+/2b09/fo6Z+8F04zdfzbQViYI2ahr+cx59n0GdQ/vNR5/JvPvoyoNbfxYMhZAgTQX/T9Nh+fzHlCL3i33vjQO6nRHI43P+vXrvF/Fn00L3jl55cu430DR3dpfvOt/hnRwYKwkfr/08j7ipxvwuaIV1tUXh073LuKvmTEfNuEucZt1bIV8ubLr0WUTh4z3rsMpaq3P+lSKX5+Cf970CIKmPjLCXAeUAxvaVafBxTDKkY8ZKN3Xo85GrbZu55ss7dFZA7Hm3sPlfSCp1zFylLnwnrW82zMR6X53qUfZstn5/bt/i1Zr76hhZSuFP1bLCJWINXEk737+VfMp5odMWnOen7ihbQ3T4soirMJzgNKeUNczwMigFLMnMdOtQByfmExFIZORIzhoX+5hxBAKW+pawBxFCzFjDEEEMhiAQIoi8F5OgQQSBEggFIsGEMAgSwWcD4KtrJj2htAZfG6xs3TNa2ZFDfrkt0rUrnx6uxehbh5/rlHM/6m1rhZ0SxYkbzNhzs9C1tATkwUIYCAhgABpKFKTwQQcBIggJyYKEIAAQ0BAkhDlZ4IIOAkQAA5MVGEAAIaAgSQhio9EUDASYAAcmKiCAEENAQIIA1VeiKAgJMAAeTERBECCGgIEEAaqvREAAEnAQLIiYkiBBDQECCANFTpiQACTgIEkBMTRQggoCFAAGmo0hMBBJwECCAnJooQQEBDgADSUKUnAgg4CRBATkwUIYCAhgABpKFKTwQQcBIggJyYKEIAAQ0BAkhDlZ4IIOAkQAA5MVGEAAIaAgSQhio9EUDASYAAcmKiCAEENAQIIA1VeiKAgJMAAeTERBECCGgIEEAaqvREAAEnAQLIiYkiBBDQECCANFTpiQACTgIEkBMTRQggoCFAAGmo0hMBBJwECCAnJooQQEBDgADSUKUnAgg4CRBATkwUIYCAhgABpKFKTwQQcBIggJyYKEIAAQ0BAkhDlZ4IIOAkQAA5MVGEAAIaAgSQhio9EUDASYAAcmKiCAEENAQIIA1VeiKAgJMAAeTERBECCGgIEEAaqvREAAEnAQLIiYkiBBDQECCANFTpiQACTgIEkBMTRQggoCFAAGmo0hMBBJwECCAnJooQQEBDgADSUKUnAgg4CRBATkwUIYCAhgABpKFKTwQQcBIggJyYKEIAAQ0BAkhDlZ4IIOAkQAA5MVGEAAIaAgSQhio9EUDASYAAcmKiCAEENAQIIA1VeiKAgJMAAeTERBECCGgIEEAaqvREAAEnAQLIiYkiBBDQECCANFTpiQACTgIEkBMTRQggoCFAAGmo0hMBBJwECCAnJooQQEBDgADSUKUnAgg4CRBATkwUIYCAhgABpKFKTwQQcBIggJyYKEIAAQ0BAkhDlZ4IIOAkQAA5MVGEAAIaAgSQhio9EUDASYAAcmKiCAEENAQIIA1VeiKAgJMAAeTERBECCGgIEEAaqvREAAEnAQLIiYkiBBDQECCANFTpiQACTgIEkBMTRQggoCFAAGmo0hMBBJwECCAnJooQQEBDgADSUKUnAgg4CRBATkwUIYCAhgABpKFKTwQQcBIggJyYKEIAAQ0BAkhDlZ4IIOAkQAA5MVGEAAIaAgSQhio9EUDASYAAcmKiCAEENAQIIA1VeiKAgJMAAeTERBECCGgIEEAaqvREAAEnAQLIiYkiBBDQECCANFTpiQACTgIEkBMTRQggoCFAAGmo0hMBBJwECCAnJooQQEBDgADSUKUnAgg4CRBATkwUIYCAhgABpKFKTwQQcBIggJyYKEIAAQ0BAkhDlZ4IIOAkQAA5MVGEAAIaAgSQhio9EUDASYAAcmKiCAEENAQIIA1VeiKAgJMAAeTERBECCGgIEEAaqvREAAEngYRj3mCrPHbksBzauM5WlmOWr817Zo55rbYXmqfAYVtJjlle+tjBHPNabS80oVBxkdNy2crEKYCsXShAAAEEYhDgI1gMaDwEAQQyR4AAyhxHuiCAQAwCBFAMaDwEAQQyR4AAyhxHuiCAQAwCBFAMaDwEAQQyR4AAyhxHuiCAQAwCBFAMaDwEAQQyR4AAyhxHuiCAQAwC/w8pw2bjj84sEAAAAABJRU5ErkJggg==" /><!-- --></p></li>
-<li><p>Multiple colour palettes are plotted as faceted swatches with palette name titles:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(colour_palette)</span></code></pre></div>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAYAAAAUg66AAAAEGWlDQ1BrQ0dDb2xvclNwYWNlR2VuZXJpY1JHQgAAOI2NVV1oHFUUPrtzZyMkzlNsNIV0qD8NJQ2TVjShtLp/3d02bpZJNtoi6GT27s6Yyc44M7v9oU9FUHwx6psUxL+3gCAo9Q/bPrQvlQol2tQgKD60+INQ6Ium65k7M5lpurHeZe58853vnnvuuWfvBei5qliWkRQBFpquLRcy4nOHj4g9K5CEh6AXBqFXUR0rXalMAjZPC3e1W99Dwntf2dXd/p+tt0YdFSBxH2Kz5qgLiI8B8KdVy3YBevqRHz/qWh72Yui3MUDEL3q44WPXw3M+fo1pZuQs4tOIBVVTaoiXEI/MxfhGDPsxsNZfoE1q66ro5aJim3XdoLFw72H+n23BaIXzbcOnz5mfPoTvYVz7KzUl5+FRxEuqkp9G/Ajia219thzg25abkRE/BpDc3pqvphHvRFys2weqvp+krbWKIX7nhDbzLOItiM8358pTwdirqpPFnMF2xLc1WvLyOwTAibpbmvHHcvttU57y5+XqNZrLe3lE/Pq8eUj2fXKfOe3pfOjzhJYtB/yll5SDFcSDiH+hRkH25+L+sdxKEAMZahrlSX8ukqMOWy/jXW2m6M9LDBc31B9LFuv6gVKg/0Szi3KAr1kGq1GMjU/aLbnq6/lRxc4XfJ98hTargX++DbMJBSiYMIe9Ck1YAxFkKEAG3xbYaKmDDgYyFK0UGYpfoWYXG+fAPPI6tJnNwb7ClP7IyF+D+bjOtCpkhz6CFrIa/I6sFtNl8auFXGMTP34sNwI/JhkgEtmDz14ySfaRcTIBInmKPE32kxyyE2Tv+thKbEVePDfW/byMM1Kmm0XdObS7oGD/MypMXFPXrCwOtoYjyyn7BV29/MZfsVzpLDdRtuIZnbpXzvlf+ev8MvYr/Gqk4H/kV/G3csdazLuyTMPsbFhzd1UabQbjFvDRmcWJxR3zcfHkVw9GfpbJmeev9F08WW8uDkaslwX6avlWGU6NRKz0g/SHtCy9J30o/ca9zX3Kfc19zn3BXQKRO8ud477hLnAfc1/G9mrzGlrfexZ5GLdn6ZZrrEohI2wVHhZywjbhUWEy8icMCGNCUdiBlq3r+xafL549HQ5jH+an+1y+LlYBifuxAvRN/lVVVOlwlCkdVm9NOL5BE4wkQ2SMlDZU97hX86EilU/lUmkQUztTE6mx1EEPh7OmdqBtAvv8HdWpbrJS6tJj3n0CWdM6busNzRV3S9KTYhqvNiqWmuroiKgYhshMjmhTh9ptWhsF7970j/SbMrsPE1suR5z7DMC+P/Hs+y7ijrQAlhyAgccjbhjPygfeBTjzhNqy28EdkUh8C+DU9+z2v/oyeH791OncxHOs5y2AtTc7nb/f73TWPkD/qwBnjX8BoJ98VQNcC+8AABCkSURBVHgB7dx5zF1zGgfwX1emtbWNpWPUUMuQiCWIYCSCEFsQZEYiQWxDwx+2EJJBhIgtscf2ByGEICIRa0QIYSY1QsRQtDrSsVNt32537u9In3lbfft2u8+t+35Oor7vvffc5z2fe/K955x722Gt9lIsBAgQ6ILA8C7MNJIAAQKNgAKyIxAg0DUBBdQ1eoMJEFBA9gECBLomoIC6Rm8wAQIKyD5AgEDXBBRQ1+gNJkBAAdkHCBDomoAC6hq9wQQIKCD7AAECXRNQQF2jN5gAAQVkHyBAoGsCCqhr9Ab/VgUuuuiics455/xWf/116vceuU79Nj3yy/T19ZVZs2aVSZMm9cgW2Yz+AieccEJZsGBB/5vk1RQY5p/jWE25Fax29tlnl2OOOaYcdthhK3iUuwgQGPH39tLrDK+//nq5/fbby8svv1y22WabMn78+GaT67vY008/XV544YXyxBNPlG+//bZ89913ZeHCheXqq68uL774Ytl2222bx7/zzjvl5ptvLrvuumt5++23yw033FC23377cuWVV5Z77rmnbLXVVs1/N954Y7n22mvL4sWLy08//VR22223XucdUts3f/788uyzzzb70l577dVs+6OPPlo++uijctttt5VNN920bLnllmXGjBnlkksuKU8++WTZZZddyrhx45p1rrvuulLX22CDDcry1htSmHVj6xFQLy/PP/9869JLL221d5zWww8/3Npwww1bs2fPbjb5ggsuaN17771Nbh+1tHbcccdWu4yany+++OLWTjvtFDTTp09vnufnn39utQumNWzYsFZ7Z2q1y63VPtppbbTRRq158+Y1j19//fXjeeIJhJ4Q+OSTT1qHH35469hjj2225/HHH28deOCBTX7rrbdakydPju28++67WxMmTGi1T8mb26ZNm9a66qqrBl0vnmAIhJ6/CH3ZZZeV4cOHl1tuuaW0S6Q5MqlHPXV56KGHymabbdbk9k5Vvv/++3LwwQc3P7fLqXz66aelXWDNz4899lg57bTTypgxY8oBBxxQi7vUi5H77rtvuf/++0u7mMorr7zSPLb+0S6oyELvCNQj4v5HtTVffvnlzQa239hKu2TK3Llzm59POeWUMmLEiOYoqN5Qj3jOOuus5r4Vrdc8YIj80dMFVE+D3n333XLeeec1ZVEPietOctJJJzUvbz2deuaZZ5pcC+TEE0+Ml70WU92B6ilVXT777LOy3Xbbxf39Qz283nPPPcubb74ZNyugoOjp0D7iaS5IX3/99c3pe31jqqdpdRk9enQ5/fTTS/tIqHnjq6f4S97wVrReT4Mts3E9XUD1yGeHHXYob7zxxlKbXc/P61Lfkd57771Sd55NNtmkXHPNNUs97sILLywvvfRSaZ+6ld13332p+5b94YsvvmiuFy25XQEtkejt/z/44IPl1ltvbd7g9thjj19tbD3iee2115prkIceemjcP9h68cAeDz3/MXz9NKp9Pae56HfQQQc1hVIvMteLxjfddFO57777ys4777zcl7m+Sx133HHl/PPPb07Hln1QPdQeO3Zs+fDDD8uiRYvK8ccf3zyknqbV07n6TljfBS29K/DII480+0B9w6n7QV3q/rVkqV/FOPLII8udd95Z3n///SU3l8HWiwf2eOjpI6D62k2ZMqVsvPHG5ZBDDmk+wZo6dWp8PF5Pz+onFO0LhU0h1cfUI6L+S13/iCOOaAqs/+0110/K6qcaJ598cnMqV4unLmeccUapH8XfddddzbWi5kZ/9KRAfe2fe+65ctRRR5X2hxDNflRf+x9//DG299xzzy2nnnrqUtcFV2a9eIIeDkPme0Bffvll2XzzzZsL0vX1rEcn9ePyM888s3z11VfNtaGZM2c2F5LvuOOOeMkfeOCB5uP2/fffP26rp3T77bdfc+7/9ddfly222CLuWxLqtab6Uaul9wTqBxvffPNNc22nbl0tnvYnn82G1qOfkSN/fWKxvKPhlVmv9/SW3qJfSy19f8/8NHHixKW2pX6Pp353o96+5L7PP/+81EKpFxLr937q9zleffXV5t2r/8r1/rrUw+7llU+9T/lUhd5a6ml1vVY4Z86cpU7bl5RP3drllU+9fXmn4iuzXl23l5chU0DL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" /><!-- --></p></li>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">plot</span>(colour_vector)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAYAAAAUg66AAAAEDmlDQ1BrQ0dDb2xvclNwYWNlR2VuZXJpY1JHQgAAOI2NVV1oHFUUPpu5syskzoPUpqaSDv41lLRsUtGE2uj+ZbNt3CyTbLRBkMns3Z1pJjPj/KRpKT4UQRDBqOCT4P9bwSchaqvtiy2itFCiBIMo+ND6R6HSFwnruTOzu5O4a73L3PnmnO9+595z7t4LkLgsW5beJQIsGq4t5dPis8fmxMQ6dMF90A190C0rjpUqlSYBG+PCv9rt7yDG3tf2t/f/Z+uuUEcBiN2F2Kw4yiLiZQD+FcWyXYAEQfvICddi+AnEO2ycIOISw7UAVxieD/Cyz5mRMohfRSwoqoz+xNuIB+cj9loEB3Pw2448NaitKSLLRck2q5pOI9O9g/t/tkXda8Tbg0+PszB9FN8DuPaXKnKW4YcQn1Xk3HSIry5ps8UQ/2W5aQnxIwBdu7yFcgrxPsRjVXu8HOh0qao30cArp9SZZxDfg3h1wTzKxu5E/LUxX5wKdX5SnAzmDx4A4OIqLbB69yMesE1pKojLjVdoNsfyiPi45hZmAn3uLWdpOtfQOaVmikEs7ovj8hFWpz7EV6mel0L9Xy23FMYlPYZenAx0yDB1/PX6dledmQjikjkXCxqMJS9WtfFCyH9XtSekEF+2dH+P4tzITduTygGfv58a5VCTH5PtXD7EFZiNyUDBhHnsFTBgE0SQIA9pfFtgo6cKGuhooeilaKH41eDs38Ip+f4At1Rq/sjr6NEwQqb/I/DQqsLvaFUjvAx+eWirddAJZnAj1DFJL0mSg/gcIpPkMBkhoyCSJ8lTZIxk0TpKDjXHliJzZPO50dR5ASNSnzeLvIvod0HG/mdkmOC0z8VKnzcQ2M/Yz2vKldduXjp9bleLu0ZWn7vWc+l0JGcaai10yNrUnXLP/8Jf59ewX+c3Wgz+B34Df+vbVrc16zTMVgp9um9bxEfzPU5kPqUtVWxhs6OiWTVW+gIfywB9uXi7CGcGW/zk98k/kmvJ95IfJn/j3uQ+4c5zn3Kfcd+AyF3gLnJfcl9xH3OfR2rUee80a+6vo7EK5mmXUdyfQlrYLTwoZIU9wsPCZEtP6BWGhAlhL3p2N6sTjRdduwbHsG9kq32sgBepc+xurLPW4T9URpYGJ3ym4+8zA05u44QjST8ZIoVtu3qE7fWmdn5LPdqvgcZz8Ww8BWJ8X3w0PhQ/wnCDGd+LvlHs8dRy6bLLDuKMaZ20tZrqisPJ5ONiCq8yKhYM5cCgKOu66Lsc0aYOtZdo5QCwezI4wm9J/v0X23mlZXOfBjj8Jzv3WrY5D+CsA9D7aMs2gGfjve8ArD6mePZSeCfEYt8CONWDw8FXTxrPqx/r9Vt4biXeANh8vV7/+/16ffMD1N8AuKD/A/8leAvFY9bLAAAAOGVYSWZNTQAqAAAACAABh2kABAAAAAEAAAAaAAAAAAACoAIABAAAAAEAAAEgoAMABAAAAAEAAAEgAAAAAKtAJY0AAAo8SURBVHgB7do9alwHGEZhKfEP6g0qEuwipAgp0gWyuSzBa0idNQTcZwUujJYQMEaNwDgmWcAZhnkZLjzT+p1vrh4NBwS+/fL1deNFgACBKwh8c4XP9JEECBD4T0CAfBEIELiagABdjd4HEyAgQL4DBAhcTUCArkbvgwkQECDfAQIEriYgQFej98EECAiQ7wABAlcTeHbKJ39+err5+PBwyvRQm7u720M976kP+/LVqctj7T483h/rgU982ttPjycujzN78/r+5sXzzsvtKf8T+p/372/++Onn4/z0Jz7pr799e+LyWLNffu9f/LF+ov+f9vu/3h7xsfOZv/nzXW6ONvj73dubH3/4Lh/bn2BJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBARoJesuAQIpIEBJZECAwEpAgFay7hIgkAIClEQGBAisBG6/fH3V8c9PTzcfHx5qdrh/v7u7Pdwzn/LAL1+dsjre5sPj/fEe+oQnvv30eMLqWJM3r+9vXjx/lg99UoDyigEBAgTOEPAn2Blo3kKAwGUEBOgyjq4QIHCGgACdgeYtBAhcRkCALuPoCgECZwgI0Blo3kKAwGUEBOgyjq4QIHCGgACdgeYtBAhcRkCALuPoCgECZwj8C1nIMC/MYahfAAAAAElFTkSuQmCC" /><!-- --></p></li>
+<li><p>Single colour palettes are plotted as swatches with a palette
+name overlay:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">plot</span>(colour_palette[<span class="st">&quot;egypt&quot;</span>])</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p></li>
+<li><p>Multiple colour palettes are plotted as faceted swatches with
+palette name titles:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">plot</span>(colour_palette)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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bvSFwMcff9w68sgjW8cff3yzPY8//njr4IMPbm6/9dZbre23376znXfffXdrxowZrfYpeXPf/PnzW1dddVW4XidgEtzo+4vQV1xxRZkyZUq55ZZbSrtEmiOTetRTl4ceeqhsscUWze32TlW+//77cuihhzY/t8upfPLJJ6VdYM3Pjz32WDnjjDPK+uuvXw466KBa3KVejNx///3L/fffX9rFVF555ZXmsfWPdkF1brvRPwL1iHjkUW29PXfu3GYD229spV0y5ddff21+Pu2008o666zTHAXVO+oRzznnnNPMVrVe84BJ8kdfF1A9DZo3b1654IILmrKoh8R1JznllFOal7eeTj3zzDPN7VogJ598cudlr8VUd6B6SlWXTz/9tOywww6d+cgb9fB67733Lm+++WbnbgXUoejrG+0jnuaC9PXXX9+cvtc3pnqaVpdp06aVM888s7SPhJo3vnqKv+INb1Xr9TXYShvX1wVUj3x22mmn8sYbb4za7Hp+Xpf6jvTee++VuvNssskm5Zprrhn1uIsvvri89NJLpX3qVvbcc89Rs5V/+OKLL5rrRSvuV0ArJPr73w8++GC59dZbmze4vfba6zcbW494XnvtteYa5OGHH96ZR+t1HtjnN/r+Y/j6aVT7ek5z0e+QQw5pCqVeZK4XjW+66aZy3333lV133XXMl7m+S51wwgnlwgsvbE7HVn5QPdSePn16+eCDD8qyZcvKiSee2DyknqbV07n6TljfBS39K/DII480+0B9w6n7QV3q/rViqV/FOProo8udd95Z3n///RV3l2i9zgP7/EZfHwHV1+78888vG2+8cTnssMOaT7Defffdzsfj9fSsfkLRvlDYFFJ9TD0iGrnU9Y866qimwEbeX2/XT8rqpxqnnnpqcypXi6cuZ511Vqkfxd91113NtaLmTn/0pUB97Z977rlyzDHHlPaHEM1+VF/7H3/8sbO9c+bMKaeffvqo64ITWa8T0Mc3Js33gL788suy5ZZbNhek6+tZj07qx+Vnn312WbhwYXNtaMGCBc2F5DvuuKPzkj/wwAPNx+0HHnhg5756SnfAAQc05/5ff/112WqrrTqzFTfqtab6Uaul/wTqBxvffPNNc22nbl0tnvYnn82G1qOfqVN/e2Ix1tHwRNbrP73RW/RbqdHzvvlp5syZo7alfo+nfnej3r9i9tln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" /><!-- --></p></li>
 </ul>
-<p>To interpolate or change the direction of colours in a plot, use the optional <code>n</code>, <code>direction</code>, <code>space</code>, or <code>interpolate</code> arguments.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(colour_vector, <span class="at">n =</span> <span class="dv">7</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">interpolate =</span> <span class="st">&quot;linear&quot;</span>)</span></code></pre></div>
-<p><img src="data:image/png;base64,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AQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrAQFaybpLgEAKCFASGRAgsBIQoJWsuwQIpIAAJZEBAQIrgfOPn37q+PX1zdk/L1/V7JDfnz++OOTdevTyyU1NDvv904vXh739pYc/vMmv4pc+Pv3d+7fT8ycfv3538kenH7y8ujp78OhhvnGrAOUVAwIECJwg4J9gJ6D5CAECdyMgQHfj6AoBAicICNAJaD5CgMDdCAjQ3Ti6QoDACQICdAKajxAgcDcCAnQ3jq4QIHCCgACdgOYjBAjcjYAA3Y2jKwQInCDwHyK1PUMD3asxAAAAAElFTkSuQmCC" /><!-- --></p>
-<p>All plots are ggplot2 objects and can be customized using any of the standard ggplot2 methods. See the ggplot2 <a href="https://ggplot2.tidyverse.org/articles/faq-customising.html">customizing FAQ</a> for some common examples.</p>
+<p>To interpolate or change the direction of colours in a plot, use the
+optional <code>n</code>, <code>direction</code>, <code>space</code>, or
+<code>interpolate</code> arguments.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">plot</span>(colour_vector, <span class="at">n =</span> <span class="dv">7</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">interpolate =</span> <span class="st">&quot;linear&quot;</span>)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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EEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlIEArWXcJEEgBAUoiAwIEVgICtJJ1lwCBFBCgJDIgQGAlcO/9h686fnX99uz5i5c1O+bziwfHvBuvPrp4F4vjPn588eq4x294+fr1DR8e/NH1m4N/gI88f3WV//l+5Du3//jh5eXZ/fPzfORWAcorBgQIEDhBwB/BTkDzLQQI3I2AAN2NoysECJwgIEAnoPkWAgTuRkCA7sbRFQIEThAQoBPQfAsBAncjIEB34+gKAQInCAjQCWi+hQCBuxEQoLtxdIUAgRME/gF22j1FD3jnpQAAAABJRU5ErkJggg==" /><!-- --></p>
+<p>All plots are ggplot2 objects and can be customized using any of the
+standard ggplot2 methods. See the ggplot2 <a href="https://ggplot2.tidyverse.org/articles/faq-customising.html">customizing
+FAQ</a> for some common examples.</p>
 </div>
 <div id="printing" class="section level2">
 <h2>Printing</h2>
-<p>The printing behaviour of colour vectors can be adjusted using a variety of global options. See <code>help(&quot;palettes-options&quot;)</code> for a list of all the available options and their default values.</p>
-<p>For example, to change the symbol used for colour previews, set the <code>palettes.print_symbol</code> option.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">palettes.print_symbol =</span> <span class="st">&quot;square&quot;</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>colour_vector</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ■ #A00E00</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ■ #D04E00</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ■ #F6C200</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ■ #0086A8</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ■ #132B69</span></span></code></pre></div>
+<p>The printing behaviour of colour vectors can be adjusted using a
+variety of global options. See <code>help(&quot;palettes-options&quot;)</code> for
+a list of all the available options and their default values.</p>
+<p>For example, to change the symbol used for colour previews, set the
+<code>palettes.print_symbol</code> option.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">palettes.print_symbol =</span> <span class="st">&quot;square&quot;</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>colour_vector</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="co">#&gt; ■ #A00E00</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="co">#&gt; ■ #D04E00</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a><span class="co">#&gt; ■ #F6C200</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="co">#&gt; ■ #0086A8</span></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a><span class="co">#&gt; ■ #132B69</span></span></code></pre></div>
 <p>Set multiple options together for unique printing styles.</p>
 <ul>
 <li><p>Print colour vectors compactly:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_symbol =</span> <span class="st">&quot;circle_large&quot;</span>,</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_hex =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_width =</span> <span class="dv">5</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>colour_palette</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_palette[2]&gt;</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $egypt</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ⬤⬤⬤⬤</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $java</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ⬤⬤⬤⬤⬤</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>  <span class="at">palettes.print_symbol =</span> <span class="st">&quot;circle_large&quot;</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>  <span class="at">palettes.print_hex =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>  <span class="at">palettes.print_width =</span> <span class="dv">5</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>)</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>colour_palette</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_palette[2]&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a><span class="co">#&gt; $egypt</span></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[4]&gt;</span></span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a><span class="co">#&gt; ⬤⬤⬤⬤</span></span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a><span class="co">#&gt; $java</span></span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a><span class="co">#&gt; ⬤⬤⬤⬤⬤</span></span></code></pre></div></li>
 <li><p>Mimic the appearance of a character vector:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_symbol =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_sep =</span> <span class="st">&quot;, &quot;</span>,</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_width =</span> <span class="dv">5</span>,</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">palettes.print_index =</span> <span class="cn">TRUE</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>colour_vector</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] #A00E00, #D04E00, #F6C200, #0086A8, #132B69</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="at">palettes.print_symbol =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>  <span class="at">palettes.print_sep =</span> <span class="st">&quot;, &quot;</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>  <span class="at">palettes.print_width =</span> <span class="dv">5</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>  <span class="at">palettes.print_index =</span> <span class="cn">TRUE</span></span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>)</span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a>colour_vector</span>
+<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a><span class="co">#&gt; &lt;palettes_colour[5]&gt;</span></span>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a><span class="co">#&gt; [1] #A00E00, #D04E00, #F6C200, #0086A8, #132B69</span></span></code></pre></div></li>
 </ul>
-<p>Set any of these options in your <a href="https://rstats.wtf/r-startup.html#rprofile"><code>.Rprofile</code></a> dotfile to have them persist across R sessions on a global or per-project basis.</p>
+<p>Set any of these options in your <a href="https://rstats.wtf/r-startup.html#rprofile"><code>.Rprofile</code></a>
+dotfile to have them persist across R sessions on a global or
+per-project basis.</p>
 </div>
 
 
